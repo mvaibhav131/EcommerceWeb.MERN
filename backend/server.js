@@ -3,7 +3,7 @@ const dotenv= require("dotenv");
 const cors= require("cors");
 const connection = require("./database");
 const routes=require("./routes/productRoute");
-
+const errorMiddlewares= require("./middleware/error");
 
 const app=express();
 
@@ -16,6 +16,10 @@ dotenv.config({path:'config/config.env'});
 
 //Route
 app.use("/api/v1",routes);
+
+//Middlewares
+app.use(errorMiddlewares);
+
 app.get('/',(req,res)=>res.send('Hello'));
 
 
