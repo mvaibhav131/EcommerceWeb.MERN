@@ -2,7 +2,8 @@ const express=require('express');
 const dotenv= require("dotenv");
 const cors= require("cors");
 const connection = require("./database");
-const routes=require("./routes/productRoute");
+const productroutes=require("./routes/productRoute");
+const userroute=require("./routes/userRoute");
 const errorMiddlewares= require("./middleware/error");
 
 const app=express();
@@ -15,7 +16,8 @@ app.use(express.json());
 dotenv.config({path:'config/config.env'});
 
 //Route
-app.use("/api/v1",routes);
+app.use("/api/v1",productroutes);
+app.use("/api/v1",userroute);
 
 //Middlewares
 app.use(errorMiddlewares);
