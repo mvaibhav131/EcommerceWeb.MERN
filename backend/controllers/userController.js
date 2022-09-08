@@ -4,6 +4,7 @@ const ErrorHandler = require("../utils/errorhandalers");
 const catchAsyncError= require("../middleware/catchAsyncError");
 const sendToken = require("../utils/jwtToken");
 const sendEmail = require("../utils/sendEmail");
+
 //register User
 const registerUser=catchAsyncError(async(req,res)=>{
   const {name,email,password}= req.body;
@@ -83,8 +84,8 @@ try{
   await sendEmail({
     email:user.email,
     subject:"Shopify Password Reset",
-    message,
-  });
+    message
+  })
   res.status(200).json({
     success:true,
     message:`Email send to ${user.email} successfully`,
