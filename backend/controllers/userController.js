@@ -78,7 +78,7 @@ await user.save({validateBeforeSave:false});
 
 const resetPasswordUrl= `${req.protocol}://${req.get("host")}/api/v1/password/reset/${resetToken}`
 
-const message=`Your Password reset token is :- \n\n ${resetPasswordUrl} \n\n IF you have not requested this mail then , Please ingnore it` ;
+const message=`Your Password reset token is :- \n\n ${resetPasswordUrl} \n\n IF you have not requested this mail then , Please ingnore it` 
 
 try{
   await sendEmail({
