@@ -45,5 +45,20 @@ const catchAsyncError= require("../middleware/catchAsyncError");
      });
  });
 
+ //get All orders --Admin
+ const getAllOrders= catchAsyncError(async(req,res,next)=>{
+   const orders= await Order.find();
+   
+  let totalAmmount=0;
+  orders.forEach((order)=>{
+   totalAmmount = totalAmmount+order.totalPrice;
+  });
 
- module.exports={newOrder,getSingleOrder,myOrders};
+    res.status(200).json({
+       success:true,
+       totalAmmount,
+       orders,
+    });
+});
+
+ module.exports={newOrder,getSingleOrder,myOrders,getAllOrders};
