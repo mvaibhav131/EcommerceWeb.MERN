@@ -4,6 +4,7 @@ const cors= require("cors");
 const connection = require("./database");
 const productroutes=require("./routes/productRoute");
 const userroute=require("./routes/userRoute");
+const orderroute=require("./routes/orderRoute");
 const errorMiddlewares= require("./middleware/error");
 const cookieParser= require("cookie-parser");
 
@@ -20,6 +21,7 @@ dotenv.config({path:'config/config.env'});
 //Route
 app.use("/api/v1",productroutes);
 app.use("/api/v1",userroute);
+app.use("/api/v1",orderroute);
 
 //Middlewares
 app.use(errorMiddlewares);
