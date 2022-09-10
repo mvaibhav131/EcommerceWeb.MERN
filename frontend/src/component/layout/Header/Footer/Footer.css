@@ -1,8 +1,8 @@
 footer {
     margin-top: 10vmax;
     padding: 2vmax;
-    background-color: rgb(34, 33, 33);
-    color: white;
+    background-color: rgb(230, 248, 220);
+    color: black;
     display: flex;
     align-items: center;
   }
@@ -63,7 +63,7 @@ footer {
     text-decoration: none;
     font-size: 1.3vmax;
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-    color: white;
+    color: gray;
     transition: all 0.5s;
     margin: 0.5vmax;
   }
