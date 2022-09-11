@@ -1,8 +1,8 @@
 import React from "react";
-import logo from "../../../images/blog-shopify.jpg";
-import search from "../../../images/search.webp";
-import profile from "../../../images/profile.png";
-import cart from "../../../images/carts.png";
+import logo from "../../images/blog-shopify.jpg";
+import search from "../../images/search.webp";
+import profile from "../../images/profile.png";
+import cart from "../../images/carts.png";
 import { Link } from "react-router-dom";
 import "./Header.css";
 

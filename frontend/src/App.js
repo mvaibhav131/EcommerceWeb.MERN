@@ -1,8 +1,12 @@
 
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Routes,Route } from 'react-router-dom';
 import './App.css';
-import Footer from './component/layout/Header/Footer/Footer';
-import Header from './component/layout/Header/Header/Header';
+import Cart from './component/layout/Cart/Cart';
+import Footer from './component/layout/Footer/Footer';
+import Header from './component/layout/Header/Header';
+import Home from './component/layout/Home/Home';
+import MyOrder from './component/layout/Order/MyOrder';
+import Product from './component/layout/Product/Product';
 
 
 function App() {
@@ -10,7 +14,12 @@ function App() {
     <div>
       <BrowserRouter>
       <Header/>
-      <hr style={{marginBottom:"550px"}}/>
+      <Routes>
+        <Route path="/" element= {<Home/>} />
+        <Route path="/product" element= {<Product/>} />
+        <Route path="/cart" element= {<Cart/>} />
+        <Route path="/order" element= {<MyOrder/>} />
+      </Routes>
       <Footer/>
     </BrowserRouter>
     </div>
