@@ -139,6 +139,7 @@ const getUserDetails = catchAsyncError(async(req,res,next)=>{
   });
 });
 
+
 //Update User Password
 const updatePassword = catchAsyncError(async(req,res,next)=>{
 
