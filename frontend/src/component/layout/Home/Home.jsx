@@ -1,16 +1,23 @@
 import React from 'react';
+import { useEffect } from 'react';
 import {CgMouse} from "react-icons/cg"
+import { useDispatch, useSelector } from 'react-redux';
+import { getProduct } from '../../../actions/productActions';
 import "./Home.css";
 import Products from './Product';
 
-const product={
-  name:"Blue Shirt",
-  images:[{url:"https://cdn.shopify.com/s/files/1/1650/5551/products/men-s-round-neck-plain-t-shirt-navy-blue-regular-fit-t-shirt-wolfattire-2549451063341_800x.jpg?v=1561008965"}],
-  price:"3000",
-  _id:"tshirts"
-};
+
 
 const Home = () => {
+  const dispatch= useDispatch();
+  const {loading,error,products,productCount}=useSelector(
+    (state)=>state.products
+  );
+
+useEffect(()=>{
+  dispatch(getProduct())
+},[dispatch]);
+
   return (
     <div>
      <div className="banner">
@@ -27,16 +34,7 @@ const Home = () => {
      <h2 className="homeheading">Featured Product</h2>
 
      <div className="container" id='container'>
-               <Products product={product}/>
-               <Products product={product}/>
-               <Products product={product}/>
-               <Products product={product}/>
-               <Products product={product}/>
-               <Products product={product}/>
-               <Products product={product}/>
-               <Products product={product}/>
-               <Products product={product}/>
-               <Products product={product}/>
+     {products && products.map((product)=> <Products product={product}/>)}
        </div>
     </div>
   )
