@@ -20,7 +20,7 @@ const Products = ({product}) => {
   <img  src={product.images[0].url} alt="blue-tshirt" />
   <p>{product.name}</p>
   <div>
-    <ReactStars {...options}/> <span> ({product.noOfReviews})</span>
+    <ReactStars {...options}/> <span> ({product.noOfReviews} Reviews)</span>
   </div>
   <span>₹ {product.price}</span>
   </Link>
