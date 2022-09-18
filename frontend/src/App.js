@@ -5,7 +5,6 @@ import Cart from './component/layout/Cart/Cart';
 import Footer from './component/layout/Footer/Footer';
 import Header from './component/layout/Header/Header';
 import Home from './component/layout/Home/Home';
-import Loader from './component/layout/Loader/Loader';
 import MyOrder from './component/layout/Order/MyOrder';
 import Product from './component/layout/Product/Product';
 import MyProfile from './component/layout/Profile/MyProfile';
@@ -22,7 +21,6 @@ function App() {
         <Route exact path="/cart" element= {<Cart/>} />
         <Route exact path="/order" element= {<MyOrder/>} />
         <Route exact path="/profile" element={<MyProfile/>} />
-        <Route exact path="/load" element={<Loader/>} />
       </Routes>
       <Footer/>
     </BrowserRouter>

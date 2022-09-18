@@ -6,18 +6,23 @@ import { getProduct } from '../../../actions/productActions';
 import Loader from '../Loader/Loader';
 import "./Home.css";
 import Products from './Product';
+import {useAlert} from 'react-alert';
 
 
 
 const Home = () => {
+  const alert= useAlert();
   const dispatch= useDispatch();
   const {loading,error,products,productCount}=useSelector(
     (state)=>state.products
   );
 
 useEffect(()=>{
+  if(error){
+    return alert.error(error)
+  }
   dispatch(getProduct())
-},[dispatch]);
+},[dispatch, error]);
 
   return (
     <>
