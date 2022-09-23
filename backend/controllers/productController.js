@@ -27,7 +27,7 @@ const getAllProducts=catchAsyncError(async(req,res,next)=>{
     
     const resultPerPage=8;
     const productCount=await Product.countDocuments();
-    const apiFeatures = new ApiFeatures(Product.find(), req.query)
+    const apiFeatures = new ApiFeatures(Product.find(),req.query)
     .search()
     .filter()
     .pagination(resultPerPage);
@@ -43,13 +43,12 @@ const getAllProducts=catchAsyncError(async(req,res,next)=>{
 
 const getProductDetails=catchAsyncError(async(req,res,next)=>{
     const product= await Product.findById(req.params.id);
-
+    
     if(!product){
         // res.status(500).json({
         //     success:false,
         //     message:"Product not found"
         // })
-
         return next(new ErrorHandler("Product Not Found",404))
     }
     res.status(200).json({
@@ -100,3 +99,4 @@ const deleteProduct=catchAsyncError(async(req,res)=>{
 
 
 module.exports={createProduct,getAllProducts,updateProduct,deleteProduct,getProductDetails}
+
