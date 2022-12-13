@@ -19,6 +19,7 @@ const Home = () => {
 
 useEffect(()=>{
   if(error){
+    //console.log(error)
     return alert.error(error)
   }
   dispatch(getProduct())
